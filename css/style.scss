@@ -1,0 +1,131 @@
+// Variables
+$g-blue: hsl(237, 18%, 59%);
+$s-red: hsl(345, 95%, 68%);
+$d-d-blue: hsl(236, 21%, 26%);
+$v-d-blue: hsl(235, 16%, 14%);
+$v-dark: hsl(234, 17%, 12%);
+
+/* Global Rules */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Red Hat Text", sans-serif;
+  background-image: url(../img/bg-stars.svg),
+    linear-gradient(to bottom, #211a29, #211a29);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* End Global Rules */
+
+.timer {
+  background-image: url(../img/pattern-hills.svg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    h1 {
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+    .cards {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px;
+      .card {
+        width: calc(100% / 4 - 25px);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        &#sec {
+          .inner-card {
+            animation: cardRotate infinite 1s ease-in-out;
+          }
+        }
+        .inner-card {
+          background-color: $d-d-blue;
+          width: 100%;
+          display: flex;
+          padding: 20px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          box-shadow: 1px 5px 10px $v-dark;
+          h2 {
+            margin: 0;
+            font-size: 5em;
+            color: $s-red;
+            @media (max-width: 767px) {
+              font-size: 1em;
+            }
+          }
+        }
+        p {
+          color: $g-blue;
+          font-weight: 300;
+          letter-spacing: 7px;
+          text-transform: uppercase;
+          font-size: 13px;
+          @media (max-width: 767px) {
+            letter-spacing: 0;
+          }
+        }
+        &:not(:last-of-type) {
+          margin-right: 25px;
+        }
+      }
+    }
+    footer {
+      position: relative;
+      bottom: -20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        li {
+          cursor: pointer;
+          .icon {
+            transition: all ease-in-out 0.3s;
+          }
+          &:hover {
+            .icon {
+              fill: $s-red;
+            }
+          }
+          &:not(:last-of-type) {
+            margin-right: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes cardRotate {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}

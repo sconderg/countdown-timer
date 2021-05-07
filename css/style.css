@@ -1,0 +1,199 @@
+/* Global Rules */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Red Hat Text", sans-serif;
+  background-image: url(../img/bg-stars.svg), -webkit-gradient(linear, left top, left bottom, from(#211a29), to(#211a29));
+  background-image: url(../img/bg-stars.svg), linear-gradient(to bottom, #211a29, #211a29);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* End Global Rules */
+.timer {
+  background-image: url(../img/pattern-hills.svg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: #fff;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timer .container {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.timer .container h1 {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.timer .container .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px;
+}
+
+.timer .container .cards .card {
+  width: calc(100% / 4 - 25px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timer .container .cards .card#sec .inner-card {
+  -webkit-animation: cardRotate infinite 1s ease-in-out;
+          animation: cardRotate infinite 1s ease-in-out;
+}
+
+.timer .container .cards .card .inner-card {
+  background-color: #343650;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 5px 10px #191a24;
+          box-shadow: 1px 5px 10px #191a24;
+}
+
+.timer .container .cards .card .inner-card h2 {
+  margin: 0;
+  font-size: 5em;
+  color: #fb6087;
+}
+
+@media (max-width: 767px) {
+  .timer .container .cards .card .inner-card h2 {
+    font-size: 1em;
+  }
+}
+
+.timer .container .cards .card p {
+  color: #8486a9;
+  font-weight: 300;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+@media (max-width: 767px) {
+  .timer .container .cards .card p {
+    letter-spacing: 0;
+  }
+}
+
+.timer .container .cards .card:not(:last-of-type) {
+  margin-right: 25px;
+}
+
+.timer .container footer {
+  position: relative;
+  bottom: -20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timer .container footer ul {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.timer .container footer ul li {
+  cursor: pointer;
+}
+
+.timer .container footer ul li .icon {
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.timer .container footer ul li:hover .icon {
+  fill: #fb6087;
+}
+
+.timer .container footer ul li:not(:last-of-type) {
+  margin-right: 50px;
+}
+
+@-webkit-keyframes cardRotate {
+  from {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+@keyframes cardRotate {
+  from {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */
